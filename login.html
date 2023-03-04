@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login-Form</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+ 
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="login-box">
+        <h2>Register
+          <image src="./assets/image/register.png" id="img">
+        </h2>
+        <form action="" id="loginForm">
+            <div class="user-box">
+                <input type="text" name="" required="" id="fullname_">
+                <label for="">FullName</label>
+            </div>
+            <div class="user-box">
+                <input type="email" name="" required="" id="email_">
+                <label for="">Email</label>
+            </div>
+            <div class="user-box">
+                <input type="" name="" required="" id="number_">
+                <label for="">Phone Number</label>
+            </div>
+            <div class="user-box">
+                <span class="showpass" onclick="showpassword()">
+                    <i class="fa-regular fa-eye" id="disablepass" style="display: none;" ></i>
+                    <i class="fa-sharp fa-solid fa-eye-slash" id="disablepass"></i>
+                </span>
+                <input type="password" name="" required="" id="password_">
+               
+                <label for="">Password</label>
+            </div>
+           <button class="btn_" type="submit" >Submit</button>
+           <!-- <button id="getData" onclick="location.href= 'edit.html'">Get data</button> -->
+        </form>
+        <p>Already Have an Account?..
+            <b onclick="location.href = 'registered.html'" style="cursor: pointer; text-decoration-line: underline; color:#2dc740;" >Login here</b>
+        </p>
+    </div>
+
+
+    <script src="./assets/main.js"></script>
+</body>
+
+</html>

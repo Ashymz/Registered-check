@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sign In
+        </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width-device-width , initial-scale=1.0"/>
+        <link rel="stylesheet" href="./assets/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./assets/css/login.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    </head>
+    <body>
+        <!-- <h1>
+            Sign In 
+        </h1>
+        <p>
+            Welcome <span id="name_"></span>
+        </p> width: 50px;
+        position: absolute;
+        top: 29px;-->
+            <div class="login-box">
+        <h2>Login
+          <image src="./assets/image/login.png" id="image_" style="width:80px; position: absolute; top: 13px;">
+        </h2>
+        <form action="" id="loginForm">
+            <div class="user-box">
+                <input type="email" name="" required="@ must be included" id="email_">
+                <label for="">Email</label>
+            </div>
+            <div class="user-box">
+                <span class="showpass" onclick="showpassword()">
+                    <i class="fa-regular fa-eye" id="disablepass" style="display: none;" ></i>
+                    <i class="fa-sharp fa-solid fa-eye-slash" id="disablepass"></i>
+                </span>
+                <input type="password" name="" required="" id="password_">
+                <label for="">Password</label>
+            </div>
+           <button class="btn_" type="submit">Login</button>
+        </form>
+        <p>Not registered?..
+            <b onclick="location.href ='login.html'" style="cursor: pointer; color: rgb(196, 89, 89);">Click here</b>
+        </p>
+    </div>
+
+    <script>
+        const form = document.getElementById("loginForm");
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email_").value;
+            const password = document.getElementById("password_").value;
+
+            //getting the users from local storage
+            let users = JSON.parse(localStorage.getItem('users'));
+
+            //Looping through users to get matching user
+            let getCredentials = false;
+            for (i = 0; i < users.length; i++) {
+                if (users[i].email === email && users[i].password === password) {
+                    getCredentials = true;
+                    localStorage.setItem('currentUser', JSON.stringify(users[i]));
+                    break;
+                }
+            }
+
+            if (getCredentials) {
+                swal({
+                    icon: 'success',
+                    text: 'Logged in Successfully!',
+                    timer: 2000
+                }).then(() => {
+                    location.href = ('edit.html');
+                });
+            } else {
+                swal({
+                    icon: 'error',
+                    text: 'Invalid Email or Password. Please try again.'
+                });
+            }
+        });
+    </script>
+
+    <script src="./assets/main.js"></script>
+    </body>
+</html>
